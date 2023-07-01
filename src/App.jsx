@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import ContactForm from './components/Contactform'
 import ContactList from './components/ContactList'
+import { AddIcon } from './components/Add'
+
 
 function App() {
   const [list,setList] = useState([])
@@ -8,6 +10,7 @@ function App() {
   const [number,setNumber] = useState('')
   const [email,setEmail] = useState('')
   const [search,setSearch] = useState('')
+  const [isActive, setIsActive] = useState(false);
   
   function handleName (name){
     setName(name)
@@ -22,6 +25,7 @@ function App() {
     setName("");
     setEmail('');
     setNumber('');
+    setIsActive(current => !current);
   };
 
   function listHandle (name,email,number){
@@ -42,10 +46,13 @@ function App() {
   function onSearch (e){
     setSearch(e.target.value.toLowerCase())
   }
+  function handleActiv() {
+    setIsActive(current => !current);
+  }
 
   return(
-    <div className='w-full min-h-screen flex flex-row'>
-     <div className='basis-2/5 bg-purple flex flex-col justify-center items-center'>
+    <div className='max-w-full h-screen flex flex-row relative'>
+     
         <ContactForm 
         handleEmail={handleEmail}
         handleName={handleName}
@@ -54,9 +61,11 @@ function App() {
         name={name}
         email={email}
         number={number}
+        isActive={isActive}
         />
-     </div>
-     <div className='basis-3/5 bg-gray-dark'>
+     
+     <AddIcon handleActiv={handleActiv}/>
+     <div className='w-full h-full bg-gray-800'>
         <ContactList 
         list={list}
         search={search}

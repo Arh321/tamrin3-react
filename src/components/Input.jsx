@@ -6,7 +6,8 @@ const Input = ({type,handleName,handleEmail,handleNumber,value}) =>{
     return(
         <div className="w-full">
             <input 
-            className="w-full pt-2 pb-2 bg-purple text-gray-light font-xs border-b border-gray-light focus:outline-none placeholder:text-gray-light " 
+      
+      className="w-full pt-2 pb-2 bg-gray-medium text-gray-light font-xs border-b border-gray-light focus:outline-none placeholder:text-gray-light placeholder:text-2xl" 
             id={type} 
             type={type}
             value={value} 

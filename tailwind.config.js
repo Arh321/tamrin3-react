@@ -13,9 +13,12 @@ export default {
       'gray-dark': '#273444',
       'gray': '#8492a6',
       'gray-light': '#d3dce6',
+      'gray-800':'#444343',
       'red':'#dc2626',
       'white':'#fff',
-      'yellow-100':'#fefce8'
+      'yellow-100':'#fefce8',
+      'brown':'#6D654F',
+      'gray-medium':'#3f4041'
     },
   },
   plugins: [],
